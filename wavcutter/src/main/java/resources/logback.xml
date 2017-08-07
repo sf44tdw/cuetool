@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- ★level 属性を指定 -->
+  <logger name="sampleLogger" level="trace" />
+
+  <root>
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

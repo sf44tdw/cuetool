@@ -1,15 +1,48 @@
+# Java
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.ear
 
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# jpa
+persistence.xml
+
+# log file
+*.log
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# Maven
+target/*
+target/
+target
+surefire-reports/*
+surefire-reports/
+
+# netbeans
+nbproject/*
+nbproject/
+nbproject
+nb-configuration.xml
+nbactions.xml
+
+# Build
+out
+build
+bin
+
+# Other
+*.swp
+*.bak
 
 # =========================
 # Operating System Files
