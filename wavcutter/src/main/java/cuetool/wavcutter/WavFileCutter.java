@@ -152,7 +152,7 @@ public class WavFileCutter {
             temp_charset = Charset.defaultCharset();
         } finally {
             charset = temp_charset;
-            LOG.info("CueSheetの文字コード指定 {0}", charset.name());
+            LOG.info("CueSheetの文字コード指定 {}", charset.name());
         }
 
         final List<AttributeChecker> checker = new ArrayList<>();
