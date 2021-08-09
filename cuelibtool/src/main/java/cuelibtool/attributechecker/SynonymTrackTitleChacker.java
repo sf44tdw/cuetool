@@ -2,16 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cuelibtool.attributeChecker;
+package cuelibtool.attributechecker;
 
-import cuetool.loggerconfigurator.LoggerConfigurator;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import org.opf_labs.audio.CueSheet;
-import org.opf_labs.audio.TrackData;
+
+import org.digitalmediaserver.cuelib.CueSheet;
+import org.digitalmediaserver.cuelib.TrackData;
 import org.slf4j.bridge.SLF4JBridgeHandler;
+
+import loggerconfigurator.LoggerConfigurator;
 
 /**
  * Trackのtitleの内容が重複している(多分曲名をつけていない)CueSheetを見つける。
@@ -26,7 +28,7 @@ public class SynonymTrackTitleChacker implements AttributeChecker {
         SLF4JBridgeHandler.install();
     }
 
-    private static final org.slf4j.Logger log = LoggerConfigurator.getCallerLogger();
+    private static final org.slf4j.Logger log = LoggerConfigurator.getlnstance().getCallerLogger();
 
     @Override
     public final synchronized boolean check(CueSheet cs) {

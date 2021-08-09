@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cuelibtool.attributeChecker;
+package cuelibtool.attributechecker;
 
-import cuetool.loggerconfigurator.LoggerConfigurator;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.opf_labs.audio.CueSheet;
-import org.opf_labs.audio.TrackData;
+
+import org.digitalmediaserver.cuelib.CueSheet;
+import org.digitalmediaserver.cuelib.TrackData;
 import org.slf4j.Logger;
 import org.slf4j.bridge.SLF4JBridgeHandler;
+
+import loggerconfigurator.LoggerConfigurator;
 
 /**
  * TitleとPerformer(アルバム、トラックとも)について、下記の調査を行う。 1:空欄ではない。 2:<>～のいずれかが含まれている。
@@ -25,7 +27,7 @@ public class ProhibitedCharacterChecker implements AttributeChecker {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
     }
-    private static final Logger log = LoggerConfigurator.getCallerLogger();
+    private static final Logger log = LoggerConfigurator.getlnstance().getCallerLogger();
     //<>～のいずれかにマッチ
     private final String REGEX = "^.*[～<>].*$";
     private final Pattern p = Pattern.compile(REGEX);

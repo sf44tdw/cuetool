@@ -2,16 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cuelibtool.attributeChecker;
+package cuelibtool.attributechecker;
 
-import cuetool.loggerconfigurator.LoggerConfigurator;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.opf_labs.audio.CueSheet;
-import org.opf_labs.audio.FileData;
+
+import org.digitalmediaserver.cuelib.CueSheet;
+import org.digitalmediaserver.cuelib.FileData;
 import org.slf4j.Logger;
 import org.slf4j.bridge.SLF4JBridgeHandler;
+
+import loggerconfigurator.LoggerConfigurator;
 
 /**
  * CueSheetのFILE項目がwavファイルであるか調査する。
@@ -24,8 +26,8 @@ public class MediaFileNameChecker implements AttributeChecker {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
     }
-    private static final Logger log = LoggerConfigurator.getCallerLogger();
-    
+    private static final Logger log = LoggerConfigurator.getlnstance().getCallerLogger();
+
     private final String REGEX = "^.*\\.wav";
     private final Pattern p = Pattern.compile(REGEX);
 

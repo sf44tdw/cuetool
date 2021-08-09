@@ -4,25 +4,28 @@
  */
 package cuelibtool.listmaker;
 
-import common.Common;
-import cuelibtool.attributeChecker.AttributeChecker;
-import cuelibtool.attributeChecker.MediaFileNameChecker;
-import cuelibtool.attributeChecker.SynonymTrackTitleChacker;
-import cuelibtool.attributeChecker.TitleAndPerformerChecker;
+import static org.junit.Assert.*;
+
 import java.io.File;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import org.digitalmediaserver.cuelib.CueSheet;
+import org.digitalmediaserver.cuelib.CueSheetSerializer;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import org.opf_labs.audio.CueSheet;
-import org.opf_labs.audio.CueSheetSerializer;
 import org.slf4j.LoggerFactory;
+
+import common.Common;
+import cuelibtool.attributechecker.AttributeChecker;
+import cuelibtool.attributechecker.MediaFileNameChecker;
+import cuelibtool.attributechecker.SynonymTrackTitleChacker;
+import cuelibtool.attributechecker.TitleAndPerformerChecker;
 
 /**
  *
@@ -103,7 +106,7 @@ public class CueSheetListMakerTest {
 
         //時間が一定ではない。
         final File target_error_time = Common.getTarget_error_time();
-        
+
         expResult.add(Common.getTarget_error_time());
         expResult.add(Common.getTarget_normal());
 

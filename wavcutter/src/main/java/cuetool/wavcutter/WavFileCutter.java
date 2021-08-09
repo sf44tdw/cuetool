@@ -4,12 +4,7 @@
  */
 package cuetool.wavcutter;
 
-import cuelibtool.attributeChecker.AttributeChecker;
-import cuelibtool.attributeChecker.MediaFileNameChecker;
-import cuelibtool.attributeChecker.SynonymTrackTitleChacker;
-import cuelibtool.attributeChecker.TitleAndPerformerChecker;
-import cuelibtool.listmaker.CueSheetListMaker;
-import cuetool.loggerconfigurator.LoggerConfigurator;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -20,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -27,10 +23,17 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.lang3.ArrayUtils;
-import org.opf_labs.audio.CueSheet;
-import org.opf_labs.audio.tools.trackcutter.TrackCutter;
-import org.opf_labs.audio.tools.trackcutter.TrackCutterConfiguration;
+import org.digitalmediaserver.cuelib.CueSheet;
+import org.digitalmediaserver.cuelib.tools.trackcutter.TrackCutter;
+import org.digitalmediaserver.cuelib.tools.trackcutter.TrackCutterConfiguration;
 import org.slf4j.Logger;
+
+import cuelibtool.attributechecker.AttributeChecker;
+import cuelibtool.attributechecker.MediaFileNameChecker;
+import cuelibtool.attributechecker.SynonymTrackTitleChacker;
+import cuelibtool.attributechecker.TitleAndPerformerChecker;
+import cuelibtool.listmaker.CueSheetListMaker;
+import loggerconfigurator.LoggerConfigurator;
 
 /**
  *
@@ -43,7 +46,7 @@ import org.slf4j.Logger;
  */
 public class WavFileCutter {
 
-    private static final Logger LOG = LoggerConfigurator.getCallerLogger();
+    private static final Logger LOG = LoggerConfigurator.getlnstance().getCallerLogger();
 
     private static String dumpArgs(String[] args) {
         return ArrayUtils.toString(args, "引数なし。");
@@ -165,10 +168,10 @@ public class WavFileCutter {
                 new TitleAndPerformerChecker());
 
         CueSheetListMaker instance = new CueSheetListMaker(source, charset, Collections.unmodifiableList(checker), isRecursive);
-        List<org.opf_labs.audio.CueSheet> dest = instance.MakeCueSheetList();
+        List<org.digitalmediaserver.cuelib.CueSheet> dest = instance.MakeCueSheetList();
         if (!(dest.isEmpty())) {
 
-            Iterator<org.opf_labs.audio.CueSheet> i = dest.iterator();
+            Iterator<org.digitalmediaserver.cuelib.CueSheet> i = dest.iterator();
             while (i.hasNext()) {
                 LOG.info("切断器を生成");
                 try {

@@ -2,18 +2,20 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cuelibtool.CueSheetLoader;
+package cuelibtool.cuesheetloader;
 
 
-import cuetool.loggerconfigurator.LoggerConfigurator;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.Iterator;
-import org.opf_labs.audio.CueParser;
-import org.opf_labs.audio.CueSheet;
-import org.opf_labs.audio.CueSheetSerializer;
-import org.opf_labs.audio.Message;
+
+import org.digitalmediaserver.cuelib.CueParser;
+import org.digitalmediaserver.cuelib.CueSheet;
+import org.digitalmediaserver.cuelib.CueSheetSerializer;
+import org.digitalmediaserver.cuelib.Message;
 import org.slf4j.bridge.SLF4JBridgeHandler;
+
+import loggerconfigurator.LoggerConfigurator;
 
 /**
  * CueSheetのパースとオブジェクトへの格納を行う。 また、CueSheetにパース段階の警告やエラーが含まれていないことをチェックする。<br>
@@ -33,7 +35,7 @@ public class CueSheetLoader {
     }
     private final LineNumberReader LN;
     private CueSheet cs;
-    private static final org.slf4j.Logger log = LoggerConfigurator.getCallerLogger();
+    private static final org.slf4j.Logger log = LoggerConfigurator.getlnstance().getCallerLogger();
 
     public CueSheetLoader(LineNumberReader LN) {
         this.LN = LN;

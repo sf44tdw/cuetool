@@ -4,10 +4,6 @@
  */
 package cuelibtool.listmaker;
 
-import cuelibtool.CueSheetLoader.CueSheetLoader;
-import cuelibtool.FileSeeker.CueSheetFileSeeker;
-import cuelibtool.attributeChecker.AttributeChecker;
-import cuetool.loggerconfigurator.LoggerConfigurator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,8 +14,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.opf_labs.audio.CueSheet;
+
+import org.digitalmediaserver.cuelib.CueSheet;
 import org.slf4j.bridge.SLF4JBridgeHandler;
+
+import cuelibtool.attributechecker.AttributeChecker;
+import cuelibtool.cuesheetloader.CueSheetLoader;
+import cuelibtool.fileseeker.CueSheetFileSeeker;
+import loggerconfigurator.LoggerConfigurator;
 
 /**
  * 特定のディレクトリの下にあるCueSheetファイルを捜索し、チェックを行った後リストを作る。
@@ -35,7 +37,7 @@ public class CueSheetListMaker {
         SLF4JBridgeHandler.install();
     }
 
-    private static final org.slf4j.Logger log = LoggerConfigurator.getCallerLogger();
+    private static final org.slf4j.Logger log = LoggerConfigurator.getlnstance().getCallerLogger();
     private final File root;
     private final Charset charset;
     private final List<AttributeChecker> checker;
@@ -82,11 +84,11 @@ public class CueSheetListMaker {
 
     /*
      * 特定のディレクトリの下にあるCueSheetファイルを捜索し、チェックを行った後リストを作る。
-     * 正常にパースできなかったか、チェックを通過しなかったファイルは無視される。 
+     * 正常にパースできなかったか、チェックを通過しなかったファイルは無視される。
      * また、コメント欄はCueSheetのフルパスに置き換えられる。
-     * 
+     *
      @return 正常終了 ロードしたCueSheetの一覧
-     * 
+     *
      * パスが空欄かCueSheetが見つからなかったかエラー null
      */
     public synchronized List<CueSheet> MakeCueSheetList() {
@@ -99,11 +101,11 @@ public class CueSheetListMaker {
 
     /*
      * 特定のディレクトリの下にあるCueSheetファイルを捜索し、チェックを行った後リストを作る。
-     * 正常にパースできなかったか、チェックを通過しなかったファイルは無視される。 
+     * 正常にパースできなかったか、チェックを通過しなかったファイルは無視される。
      * また、コメント欄はCueSheetのフルパスに置き換えられる。
-     * 
+     *
      @return 正常終了 ロードしたCueSheetファイルの一覧
-     * 
+     *
      * パスが空欄かCueSheetが見つからなかったかエラー null
      */
     public synchronized List<File> MakeCueFileList() {

@@ -3,23 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cuelibtool.attributeChecker;
+package cuelibtool.attributechecker;
 
-import common.Common;
-import cuelibtool.CueSheetLoader.CueSheetLoader;
+import static org.junit.Assert.*;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.nio.charset.Charset;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.slf4j.LoggerFactory;
+
+import common.Common;
+import cuelibtool.cuesheetloader.CueSheetLoader;
 
 /**
  *

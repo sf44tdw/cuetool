@@ -10,7 +10,6 @@
 	<modules>
 		<module>cuelibtool</module>
 		<module>wavcutter</module>
-		<module>loggerconfigurator</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -38,9 +37,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.digitalmediaserver</groupId>
-			<artifactId>cuelib-parent</artifactId>
+			<artifactId>cuelib-core</artifactId>
 			<version>2.0.0</version>
-			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.digitalmediaserver</groupId>
+			<artifactId>cuelib-tools</artifactId>
+			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
 
