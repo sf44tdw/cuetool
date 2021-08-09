@@ -10,11 +10,6 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>cuelibtool</artifactId>
             <version>${project.version}</version>
@@ -24,11 +19,6 @@
                     <artifactId>cuelib</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>loggerconfigurator</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>
@@ -42,10 +32,6 @@
             <type>jar</type>
         </dependency>
     </dependencies>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
         <build>
         <plugins>
             <plugin>
